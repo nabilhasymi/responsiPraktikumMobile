@@ -12,7 +12,7 @@ class ApiDataSource {
     return BaseNetwork.get("filter.php?c=$Query");
   }
 
-  Future<Map<String, dynamic>> detailsbook(String idDiterima) {
+  Future<Map<String, dynamic>> getDetails(String idDiterima) {
     String id = idDiterima;
     return BaseNetwork.get("lookup.php?i=$id");
   }

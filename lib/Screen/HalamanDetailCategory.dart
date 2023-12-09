@@ -25,7 +25,7 @@ class _HalamanDetailCategoryState extends State<HalamanDetailCategory> {
         ),
         backgroundColor: Color.fromRGBO(115, 144, 114, 1.0),
         title: Text(
-          widget.categories.strCategory!,
+          widget.categories.strCategory! + " Meals",
           style: TextStyle(fontFamily: 'BebasNeue', fontSize: 28),
         ),
         centerTitle: true,
@@ -72,7 +72,7 @@ class _HalamanDetailCategoryState extends State<HalamanDetailCategory> {
         onTap: () {
           Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return HalamanDetailMeals();
+              return HalamanDetailMeals(meals: mealsData.idMeal.toString());
             },
           ));
         },
@@ -92,19 +92,13 @@ class _HalamanDetailCategoryState extends State<HalamanDetailCategory> {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.network(
-                    mealsData.strMealThumb!,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
-                child: Text(
-                  mealsData.idMeal!,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Image.network(
+                  mealsData.strMealThumb!,
+                  fit: BoxFit.cover,
+                  height: 150,
+                  width: 150,
                 ),
               ),
             ],
